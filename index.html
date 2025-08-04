@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PMGSY Scheme Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>PMGSY Scheme Prediction</h2>
+    <form method="POST">
+        <input type="number" step="0.01" name="road_sanctioned" placeholder="No. of Road Works Sanctioned" required>
+        <input type="number" step="0.01" name="road_length" placeholder="Length of Road Works Sanctioned (km)" required>
+        <input type="number" step="0.01" name="bridges_sanctioned" placeholder="No. of Bridges Sanctioned" required>
+        <input type="number" step="0.01" name="cost_sanctioned" placeholder="Cost of Works Sanctioned (Cr)" required>
+        <input type="number" step="0.01" name="roads_completed" placeholder="No. of Roads Completed" required>
+        <input type="number" step="0.01" name="length_completed" placeholder="Length of Roads Completed (km)" required>
+        <input type="number" step="0.01" name="bridges_completed" placeholder="No. of Bridges Completed" required>
+        <input type="number" step="0.01" name="expenditure" placeholder="Expenditure Occurred (Cr)" required>
+        <input type="number" step="0.01" name="roads_balance" placeholder="No. of Roads Balance" required>
+        <input type="number" step="0.01" name="length_balance" placeholder="Length of Roads Balance (km)" required>
+        <input type="number" step="0.01" name="bridges_balance" placeholder="No. of Bridges Balance" required>
+        
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <div class="result">
+            Predicted PMGSY Scheme: <strong>{{ prediction }}</strong>
+        </div>
+    {% endif %}
+</div>
+</body>
+</html>
